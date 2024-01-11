@@ -1,0 +1,53 @@
+* {
+  border: 1px solid #000;
+  // 버그
+  // @include grid; 
+}
+.container {
+  &_200px {
+    display: grid;
+    // 그리드에 열을 추가(200픽셀 열 3개)
+    grid-template-columns: 200px 200px 200px;
+  }
+  &_1fr {
+    display: grid;
+    // fr단위를 포함한 가변 그리드
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  &_2fr {
+    display: grid;
+    // 다른 양수도 할당 가능
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+  
+  &_gridGap {
+    display: grid;
+    // 그리드 간격
+    grid-template-columns: 1fr 1fr 1fr;
+    // ** grid 접두사를 사용하지 않아도 됨
+    grid-gap: 10px;
+  }
+
+  &_repeat {
+    display: grid;
+    // 반복
+    grid-template-columns: repeat(3, 1fr);
+    // grid-template-columns: repeat(3, 1fr 4fr 2fr); 가로로 반복됨
+    // 높이 (최소 100px, 이후에는 컨텐츠 만큼 늘어남)
+    grid-template-rows: repeat(3, minmax(100px, auto));
+  }
+
+  &_autoFill {
+    display: grid;
+    // 모자라면 자리를 비움
+    grid-template-columns: repeat(auto-fill, minmax(20%, auto));
+    grid-template-rows: repeat(1, minmax(100px, auto));
+  }
+
+  &_autoFit {
+    display: grid;
+    // 모자라면 늘림
+    grid-template-columns: repeat(auto-fit, minmax(20%, auto));
+    grid-template-rows: repeat(1, minmax(100px, auto));
+  }
+}
