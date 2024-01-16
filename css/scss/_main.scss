@@ -3,19 +3,35 @@ html {
 }
 section {
     width: 100%;
-    height: 200vh;
+    height: 100vh;
+    &.section1 {
+        background-color: deepskyblue; 
+    }
+    &.section2 {
+        background-color: yellowgreen; 
+    }
+    &.section3 {
+        background-color: coral; 
+    }
+    &.section4 {
+        background-color: pink; 
+    }
+    .container {
+        width: inherit;
+        height: inherit;
+        @include flex_row;
+        justify-content: center;
+        align-items: center;
+    }
+    .circle {
+        @include flex_row;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 80px;
+        background-color: burlywood;
+        border-radius: 50%;
+        opacity: 0;
+    }
 }
-.box {
-    @include flex_row;
-    justify-content: center;
-    align-items: center;
-}
-.circle {
-    @include flex_row;
-    justify-content: center;
-    align-items: center;
-    width: 80px;
-    height: 80px;
-    background-color: burlywood;
-    border-radius: 50%;
-}
+

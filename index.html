@@ -9,13 +9,29 @@
 </head>
 <body>
     <div class="wrraper">
-        <section>
+        <section class="section1">
             <div class="container">
-                <h1>ScrollMagic</h1>
-                <p>ScrollMagic</p>
-                <hr>
-                <div class="box" id="trigger1">
-                    <h2 id="animate" class="circle">1</h2>
+
+            </div>
+        </section>
+        <section class="section2" id="trigger2">
+            <div class="container">
+                <div class="circle" id="animate2">
+                    <h2>1</h2>
+                </div>
+            </div>
+        </section>
+        <section class="section3" id="trigger3">
+            <div class="container">
+                <div class="circle" id="animate3">
+                    <h2>1</h2>
+                </div>
+            </div>
+        </section>
+        <section class="section4">
+            <div class="container">
+                <div class="circle" id="animate4">
+                    <h2>1</h2>
                 </div>
             </div>
         </section>
@@ -26,21 +42,29 @@
     <script src="./node_modules/scrollmagic/scrollmagic/minified/plugins/jquery.ScrollMagic.min.js"></script>
     <script>
         $(function(){
+            // 1. 컨트롤러 생성
             let controller = new ScrollMagic.Controller();
-            let gsapObject = gsap.to("#animate", 0.5, {
-                backgroundColor: "red",
-                // scale: 3.0,
-                rotation: 580,
-                // x: "50vw",
-                // y: "100vh"
-            });
-
-            let scene = new ScrollMagic.Scene({
-                triggerElement: "#trigger1",
-                duration: 2000,
+            // 2. 애니메이션 정의 및 트리거 설정
+            // 첫 번째 씬 추가
+            var scene2 = new ScrollMagic.Scene({
+                // 애니메이션이 시작될 트리거 엘리먼트의 ID
+                triggerElement: "#trigger2",
+                // 애니메이션 지속 시간
+                duration: 1500,
+                // 트리거를 시작할 위치
+                // offset: 50
+                triggerHook: 0,
             })
-            .setTween(gsapObject)
-            .setPin("#trigger1")
+            .setTween("#animate2", { opacity: 1, scale: 0.5 })
+            .setPin("#trigger2")
+            .addTo(controller);
+            // 두 번째 씬 추가
+            var scene3 = new ScrollMagic.Scene({
+                triggerElement: "#trigger3",
+                duration: 200,
+            })
+            .setTween("#animate3", { opacity: 1, scale: 0.5 })
+            .setPin("#animate3")
             .addTo(controller);
         });
     </script>
