@@ -1,9 +1,38 @@
-@font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+a {
+    font-size: ratio(16, 1920);
 }
-
-@font-face {
-    font-family: 'Pretendard-ExtraLight';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraLight.woff') format('woff');
+.container {
+    @include position;
+    @include flex_row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1720px;
+    height: inherit;
+    padding: {
+        left: 20px;
+        right: 20px;
+    };
+}
+.header {
+    @include flex_row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: ratio(70, 1920);
+    background-color: transparent;
+    &__logo {
+        @include position(a, 50%, 0, 0, 20px);
+        transform: translateY(-50%);
+    }
+    &__menu {
+        @include flex_row;
+        column-gap: ratio(40, 1920);
+        li {
+            a {
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
+    }
 }

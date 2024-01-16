@@ -8,38 +8,42 @@
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
 </head>
 <body>
+    <!-- 구현 내용 -->
+    <!-- 마우스 포인터에 도형 -->
+    <!-- 헤더 인디케이터 -->
     <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <a href="javascript:;" class="header__logo">
+                    <h1>LOGO</h1>
+                </a>
+                <ul class="header__menu">
+                    <li>
+                        <a href="javascript:;">menu 1</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">menu 2</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">menu 3</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">menu 4</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
         <section>
-            <div class="container"></div>
+            <div class="container">
+
+            </div>
         </section>
+        <footer class="footer">
+
+        </footer>
     </div>
     <script>
-        $(function(){
-            // 1. 컨트롤러 생성
-            let controller = new ScrollMagic.Controller();
-            // 2. 애니메이션 정의 및 트리거 설정
-            // 첫 번째 씬 추가
-            var scene2 = new ScrollMagic.Scene({
-                // 애니메이션이 시작될 트리거 엘리먼트의 ID
-                triggerElement: "#trigger2",
-                // 애니메이션 지속 시간
-                duration: 1500,
-                // 트리거를 시작할 위치
-                // offset: 50
-                triggerHook: 0,
-            })
-            .setTween("#animate2", { opacity: 1, scale: 0.5 })
-            .setPin("#trigger2")
-            .addTo(controller);
-            // 두 번째 씬 추가
-            var scene3 = new ScrollMagic.Scene({
-                triggerElement: "#trigger3",
-                duration: 200,
-            })
-            .setTween("#animate3", { opacity: 1, scale: 0.5 })
-            .setPin("#animate3")
-            .addTo(controller);
-        });
+        
     </script>
 </body>
 </html>
