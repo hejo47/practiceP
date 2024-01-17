@@ -1,6 +1,9 @@
 a, p, span {
     font-size: ratio(16, 1920);
 }
+body {
+    background-color: white;
+}
 .container {
     @include position;
     @include flex_row;
@@ -23,16 +26,17 @@ a, p, span {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: $pointColor__default;
+    background-color: white;
     transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
     pointer-events: none;
+    color: white;
     &.view {
         @include flex_row;
         justify-content: center;
         align-items: center;
         width: 100px;
         height: 100px;
-        color: #FFF;
         &::after {
             content: "VIEW";
         }
@@ -124,6 +128,9 @@ a, p, span {
     }
 }
 .footer {
+    // margin: {
+    //     top: ratio(100, 1920);
+    // };
     .container {
         flex-wrap: wrap;
     }
@@ -184,6 +191,21 @@ a, p, span {
                 margin-bottom: ratio(20, 1920);
             }
         }
+        &_num {
+            width: 100%;
+            background-color: $pointColor__second;
+            a {
+                @include flex_row;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
+                font-size: ratio(18, 1920);
+                padding: ratio(20, 1920) 0;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
         &_menuList {
             @include flex_column;
             row-gap: ratio(20, 1920);
@@ -191,7 +213,7 @@ a, p, span {
                 a {
                     font-family: "Pretendard-SemiBold";
                     font-size: ratio(19, 1920);
-                    display: inline;
+                    display: block;
                     width: 100%;
                     &:hover {
                         text-decoration: underline;
