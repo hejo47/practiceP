@@ -1,10 +1,10 @@
-a {
+a, p, span {
     font-size: ratio(16, 1920);
 }
 .container {
     @include position;
     @include flex_row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
     max-width: 1720px;
@@ -14,16 +14,45 @@ a {
         right: 20px;
     };
 }
+.mouseCursor {
+    @include flex_row;
+    @include position(a, 20px, 0, 0, 0);
+    justify-content: center;
+    align-items: center;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: $pointColor__default;
+    transform: translate(-50%, -50%);
+    &.view {
+        @include flex_row;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        color: #FFF;
+        &::after {
+            content: "VIEW";
+        }
+    }
+}
 .header {
+    @include position(sck, 0, 0, 0, 0);
     @include flex_row;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: ratio(70, 1920);
     background-color: transparent;
+    .container {
+        justify-content: center;
+        align-items: center;
+    }
     &__logo {
         @include position(a, 50%, 0, 0, 20px);
         transform: translateY(-50%);
+        display: block;
+        width: 5.5rem;
     }
     &__menu {
         @include flex_row;
@@ -34,5 +63,69 @@ a {
                 text-transform: uppercase;
             }
         }
+    }
+    &__tool {
+        @include flex_row;
+        @include position(a, 50%, 20px);
+        transform: translateY(-50%);
+        align-items: center;
+        column-gap: ratio(20, 1920);
+        &_searchIcon {
+            font-size: ratio(24, 1920);
+        }
+        &_langList {
+            @include flex_row;
+            column-gap: ratio(10, 1920);
+            li.active {
+                a {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+.content {
+    &__mainSwiper {
+        .swiper {
+            &-slide {
+                @include flex_row;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+    &__infoList {
+        @include flex_row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: {
+            top: ratio(30, 1920);
+            bottom: ratio(100, 1920);
+        };
+        .container {
+            flex-wrap: wrap;
+        }
+        &_leftItem {
+            width: 25%;
+            a {
+                padding: ratio(30, 1920);
+                display: block;
+                background-color: $pointColor__default;
+            }
+        }
+        &_rightItem {
+            width: 75%;
+            background-color: $pointColor__second;
+            padding: ratio(30, 1920);
+        }
+    }
+}
+.footer {
+    .container {
+        flex-wrap: wrap;
+    }
+    &__item {
+        width: 25%;
     }
 }

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./css/styles.css" />
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="./node_modules/remixicon/fonts/remixicon.css" />
+    <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.min.css" />
 </head>
 <body>
     <!-- 구현 내용 -->
@@ -31,19 +33,77 @@
                         <a href="javascript:;">menu 4</a>
                     </li>
                 </ul>
+                <div class="header__tool">
+                    <a href="javascript:;" class="header__tool_searchIcon">
+                        <i class="ri-search-line"></i>
+                    </a>
+                    <ul class="header__tool_langList">
+                        <li class="active">
+                            <a href="javascript:;">KOR</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">ENG</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </header>
-        <section>
-            <div class="container">
-
-            </div>
-        </section>
+        </header>                                                                                                                                                                                                                                                                                                                                                         
+        <div id="content" class="content">
+            <section class="content__mainSwiper">
+                <div id="mainSwiper" class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="container">
+                                Slide 1
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="container">
+                                Slide 2
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="container">
+                                Slide 3
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="content__infoList">
+                <div class="container">
+                    <div class="content__infoList_leftItem">
+                        <a href="javascript:;"></a>
+                    </div>
+                    <div class="content__infoList_rightItem">
+                        
+                    </div>
+                </div>
+            </section>
+        </div>
         <footer class="footer">
+            <div class="container">
+                <div class="footer__item">
 
+                </div>
+                <div class="footer__item">
+                    
+                </div>
+                <div class="footer__item">
+                    
+                </div>
+                <div class="footer__item">
+                    
+                </div>
+            </div>
         </footer>
     </div>
+    <script src="./node_modules/swiper/swiper-bundle.min.js"></script>
+    <script src="./js/default.js"></script>
     <script>
-        
+        const swiper = new Swiper("#mainSwiper", {
+            // autoplay: true,
+        });
     </script>
 </body>
 </html>
