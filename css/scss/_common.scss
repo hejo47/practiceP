@@ -160,8 +160,8 @@ a, p, span {
                     display: block;
                     height: 100%;
                     font-size: ratio(22, 1920);
-                    padding: ratio(20, 1920);
-                    font-weight: bold;
+                    padding: ratio(30, 1920) ratio(20, 1920);
+                    font-family: "Pretendard-SemiBold";
                     &:hover {
                         text-decoration: underline;
                     }
@@ -185,7 +185,57 @@ a, p, span {
             }
         }
         &_menuList {
-
+            @include flex_column;
+            row-gap: ratio(20, 1920);
+            li {
+                a {
+                    font-family: "Pretendard-SemiBold";
+                    font-size: ratio(19, 1920);
+                    display: inline;
+                    width: 100%;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        &_sns {
+            @include flex_row;
+            column-gap: 6px;
+            li {
+                border: 1px solid;
+                border-radius: 50%;
+                width: ratio(47, 1920);
+                height: ratio(47, 1920);
+                a {
+                    @include flex_row;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: inherit;
+                    i {
+                        font-size: ratio(22, 1920);
+                    }
+                }
+            }
+        }
+    }
+    &__copy {
+        @include flex_row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: {
+            top: ratio(30, 1920);
+            bottom: ratio(30, 1920);
+        };
+        p {
+            font-size: ratio(18, 1920);
+            font-family: "Pretendard-ExtraLight";
+            i {
+                margin-right: ratio(2, 1920);
+            }
         }
     }
 }
