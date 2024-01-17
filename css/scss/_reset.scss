@@ -5,6 +5,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  color: $textColor__default;
 }
 
 body {
@@ -23,7 +24,7 @@ ul, ol, li {
 }
 
 a {
-  color: #333;
+  color: $textColor__default;
   text-decoration: none;
 }
 

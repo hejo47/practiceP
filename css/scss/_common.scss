@@ -9,6 +9,7 @@ a, p, span {
     width: 100%;
     max-width: 1720px;
     height: inherit;
+    margin: 0 auto;
     padding: {
         left: 20px;
         right: 20px;
@@ -24,6 +25,7 @@ a, p, span {
     border-radius: 50%;
     background-color: $pointColor__default;
     transform: translate(-50%, -50%);
+    pointer-events: none;
     &.view {
         @include flex_row;
         justify-content: center;
@@ -126,6 +128,64 @@ a, p, span {
         flex-wrap: wrap;
     }
     &__item {
+        @include position;
+        @include flex_column;
+        @include only(first) {
+            border: {
+                left: none;
+            }
+        }
         width: 25%;
+        padding: 30px 20px;
+        border: {
+            left: 1px solid;
+        }
+        height: ratio(380, 1920);
+        justify-content: space-between;
+        align-items: flex-start;
+        &.half {
+            width: calc(25% / 2);
+            padding: 0;
+            .footer__item_sm {
+                @include position;
+                @include only(last) {
+                    &::after {
+                        @include position(a, 0, 50%, null, 50%);
+                        @include box_border;
+                    }
+                }
+                width: 100%;
+                height: 50%;
+                a {
+                    display: block;
+                    height: 100%;
+                    font-size: ratio(22, 1920);
+                    padding: ratio(20, 1920);
+                    font-weight: bold;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        &::before,
+        &::after {
+            @include box_border;
+        }
+        &::before {
+            @include position(a, 0, 50%, null, 50%);
+        }
+        &::after {
+            @include position(a, null, 50%, 0, 50%);
+        }
+        &_info {
+            height: 100%;
+            &_logo {
+                margin-bottom: ratio(20, 1920);
+            }
+        }
+        &_menuList {
+
+        }
     }
 }
